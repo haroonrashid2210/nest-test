@@ -2,15 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "dist/src/main.js",
       "use": "@vercel/node",
-      "config": { "distDir": "dist" }
+      "config": {
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist"
+      }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/src/main.js"
-    }
-  ]
+  "framework": {
+    "name": "none"
+  }
 }
